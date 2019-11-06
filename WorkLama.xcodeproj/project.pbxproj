@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		80BD7D5B2372FBD5009F186C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BD7D5A2372FBD5009F186C /* AppDelegate.swift */; };
-		80BD7D5D2372FBD5009F186C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BD7D5C2372FBD5009F186C /* ViewController.swift */; };
+		80BD7D5D2372FBD5009F186C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BD7D5C2372FBD5009F186C /* HomeViewController.swift */; };
 		80BD7D602372FBD5009F186C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80BD7D5E2372FBD5009F186C /* Main.storyboard */; };
 		80BD7D622372FBD7009F186C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80BD7D612372FBD7009F186C /* Assets.xcassets */; };
 		80BD7D652372FBD7009F186C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80BD7D632372FBD7009F186C /* LaunchScreen.storyboard */; };
+		80BD7D7423730539009F186C /* HomeViewControllerEXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BD7D7323730539009F186C /* HomeViewControllerEXT.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		80BD7D572372FBD5009F186C /* WorkLama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkLama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80BD7D5A2372FBD5009F186C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		80BD7D5C2372FBD5009F186C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80BD7D5C2372FBD5009F186C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		80BD7D5F2372FBD5009F186C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80BD7D612372FBD7009F186C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80BD7D642372FBD7009F186C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80BD7D662372FBD7009F186C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80BD7D7323730539009F186C /* HomeViewControllerEXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerEXT.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,71 @@
 		80BD7D592372FBD5009F186C /* WorkLama */ = {
 			isa = PBXGroup;
 			children = (
-				80BD7D5A2372FBD5009F186C /* AppDelegate.swift */,
-				80BD7D5C2372FBD5009F186C /* ViewController.swift */,
-				80BD7D5E2372FBD5009F186C /* Main.storyboard */,
-				80BD7D612372FBD7009F186C /* Assets.xcassets */,
-				80BD7D632372FBD7009F186C /* LaunchScreen.storyboard */,
-				80BD7D662372FBD7009F186C /* Info.plist */,
+				80BD7D722373051B009F186C /* Extensions */,
+				80BD7D712372FFF3009F186C /* Common */,
+				80BD7D702372FD72009F186C /* Storyboards */,
+				80BD7D6F2372FCAC009F186C /* Assets */,
+				80BD7D6E2372FC94009F186C /* SubViews */,
+				80BD7D6D2372FC8E009F186C /* Models */,
+				80BD7D6C2372FC83009F186C /* Controllers */,
 			);
 			path = WorkLama;
+			sourceTree = "<group>";
+		};
+		80BD7D6C2372FC83009F186C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				80BD7D5C2372FBD5009F186C /* HomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		80BD7D6D2372FC8E009F186C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		80BD7D6E2372FC94009F186C /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		80BD7D6F2372FCAC009F186C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				80BD7D612372FBD7009F186C /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		80BD7D702372FD72009F186C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				80BD7D632372FBD7009F186C /* LaunchScreen.storyboard */,
+				80BD7D5E2372FBD5009F186C /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		80BD7D712372FFF3009F186C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				80BD7D662372FBD7009F186C /* Info.plist */,
+				80BD7D5A2372FBD5009F186C /* AppDelegate.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		80BD7D722373051B009F186C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				80BD7D7323730539009F186C /* HomeViewControllerEXT.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +194,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80BD7D5D2372FBD5009F186C /* ViewController.swift in Sources */,
+				80BD7D7423730539009F186C /* HomeViewControllerEXT.swift in Sources */,
+				80BD7D5D2372FBD5009F186C /* HomeViewController.swift in Sources */,
 				80BD7D5B2372FBD5009F186C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,7 +343,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WorkLama/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/WorkLama/Common/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +360,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WorkLama/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/WorkLama/Common/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
