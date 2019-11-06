@@ -13,6 +13,12 @@
 		80BD7D622372FBD7009F186C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80BD7D612372FBD7009F186C /* Assets.xcassets */; };
 		80BD7D652372FBD7009F186C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80BD7D632372FBD7009F186C /* LaunchScreen.storyboard */; };
 		80BD7D7423730539009F186C /* HomeViewControllerEXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BD7D7323730539009F186C /* HomeViewControllerEXT.swift */; };
+		80BD7D7623734251009F186C /* CityCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BD7D7523734251009F186C /* CityCollectionView.swift */; };
+		80BD7D7823734262009F186C /* CityCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80BD7D7723734262009F186C /* CityCollectionView.xib */; };
+		80BD7D7A237342E4009F186C /* CommonEXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BD7D79237342E4009F186C /* CommonEXT.swift */; };
+		80BD7D7D237343A8009F186C /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BD7D7B237343A8009F186C /* CityCell.swift */; };
+		80BD7D7E237343A8009F186C /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80BD7D7C237343A8009F186C /* CityCell.xib */; };
+		80BD7D8023734749009F186C /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BD7D7F23734749009F186C /* AppUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		80BD7D642372FBD7009F186C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80BD7D662372FBD7009F186C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80BD7D7323730539009F186C /* HomeViewControllerEXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerEXT.swift; sourceTree = "<group>"; };
+		80BD7D7523734251009F186C /* CityCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionView.swift; sourceTree = "<group>"; };
+		80BD7D7723734262009F186C /* CityCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCollectionView.xib; sourceTree = "<group>"; };
+		80BD7D79237342E4009F186C /* CommonEXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonEXT.swift; sourceTree = "<group>"; };
+		80BD7D7B237343A8009F186C /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
+		80BD7D7C237343A8009F186C /* CityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
+		80BD7D7F23734749009F186C /* AppUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +97,10 @@
 		80BD7D6E2372FC94009F186C /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				80BD7D7523734251009F186C /* CityCollectionView.swift */,
+				80BD7D7723734262009F186C /* CityCollectionView.xib */,
+				80BD7D7B237343A8009F186C /* CityCell.swift */,
+				80BD7D7C237343A8009F186C /* CityCell.xib */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -111,6 +127,7 @@
 			children = (
 				80BD7D662372FBD7009F186C /* Info.plist */,
 				80BD7D5A2372FBD5009F186C /* AppDelegate.swift */,
+				80BD7D7F23734749009F186C /* AppUtility.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -119,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				80BD7D7323730539009F186C /* HomeViewControllerEXT.swift */,
+				80BD7D79237342E4009F186C /* CommonEXT.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -182,8 +200,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				80BD7D652372FBD7009F186C /* LaunchScreen.storyboard in Resources */,
+				80BD7D7E237343A8009F186C /* CityCell.xib in Resources */,
 				80BD7D622372FBD7009F186C /* Assets.xcassets in Resources */,
 				80BD7D602372FBD5009F186C /* Main.storyboard in Resources */,
+				80BD7D7823734262009F186C /* CityCollectionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,9 +214,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80BD7D8023734749009F186C /* AppUtility.swift in Sources */,
 				80BD7D7423730539009F186C /* HomeViewControllerEXT.swift in Sources */,
 				80BD7D5D2372FBD5009F186C /* HomeViewController.swift in Sources */,
+				80BD7D7D237343A8009F186C /* CityCell.swift in Sources */,
 				80BD7D5B2372FBD5009F186C /* AppDelegate.swift in Sources */,
+				80BD7D7A237342E4009F186C /* CommonEXT.swift in Sources */,
+				80BD7D7623734251009F186C /* CityCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

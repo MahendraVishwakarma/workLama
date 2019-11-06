@@ -8,21 +8,27 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 extension HomeViewController{
     
+    // basic common setup
     func initialSetup() {
         searchbarSetup()
     }
     
+
+//MARK:search bar setup(UI & settings)
+    
     func searchbarSetup() {
+        
         self.title = "Weather Point"
         navigationController?.navigationBar.prefersLargeTitles = true
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.tintColor = .white
-        searchController.searchBar.enablesReturnKeyAutomatically = true
-        searchController.obscuresBackgroundDuringPresentation = false
-        navigationItem.searchController = searchController
+        let searchCon = UISearchController(searchResultsController: nil)
+        searchCon.searchBar.tintColor = .white
+        searchCon.searchBar.enablesReturnKeyAutomatically = true
+        searchCon.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchCon
         navigationItem.largeTitleDisplayMode = .never
         
     }
