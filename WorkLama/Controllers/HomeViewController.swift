@@ -13,6 +13,8 @@ class HomeViewController: UIViewController {
 
     let listView = CityCollectionView()
     var weatherInfo: CityWeather?
+    var searchCon:UISearchController!
+    var annotation = MKPointAnnotation()
     @IBOutlet weak var mapview: MKMapView!
     
     override func viewDidLoad() {

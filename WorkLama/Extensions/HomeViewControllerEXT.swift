@@ -24,11 +24,12 @@ extension HomeViewController{
         
         self.title = "Weather Point"
         navigationController?.navigationBar.prefersLargeTitles = true
-        let searchCon = UISearchController(searchResultsController: nil)
+        searchCon = UISearchController(searchResultsController: nil)
         searchCon.searchBar.delegate = self
         searchCon.searchBar.tintColor = .white
         searchCon.searchBar.enablesReturnKeyAutomatically = true
         searchCon.obscuresBackgroundDuringPresentation = false
+        searchCon.isActive = false
         navigationItem.searchController = searchCon
         navigationItem.largeTitleDisplayMode = .never
         definesPresentationContext = true
@@ -55,6 +56,9 @@ extension HomeViewController{
 extension HomeViewController:PassData {
     func passData(city: City) {
         fetchWeatherInfo(cityID: city.id)
+        dismissListView(yOrigin: listView.frame.origin.y)
+        searchCon.dismiss(animated: true, completion: nil)
+        searchCon.searchBar.text = city.name
     }
     
     func fetchWeatherInfo(cityID:Int) {
@@ -80,8 +84,12 @@ extension HomeViewController:PassData {
     }
     
     func addAnnotation() {
-        let coordinate = CLLocationCoordinate2D(latitude: self.weatherInfo?.coord.lat ?? 12.9716, longitude: self.weatherInfo?.coord.lon ?? 77.5946)
-        let annotation = MKPointAnnotation()
+        
+        let coordinate = CLLocationCoordinate2D(latitude: self.weatherInfo?.coord?.lat ?? 12.9716, longitude: self.weatherInfo?.coord?.lon ?? 77.5946)
+        let regionRadius: CLLocationDistance = 1000
+        let coordinateRegion = MKCoordinateRegion(center: coordinate,latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
+        mapview.setRegion(coordinateRegion, animated: true)
+        
         annotation.coordinate = coordinate
         annotation.title = ""
         annotation.subtitle = ""
@@ -98,6 +106,9 @@ extension HomeViewController:UISearchBarDelegate {
     }
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        for annotation in self.mapview.selectedAnnotations {
+            self.mapview.deselectAnnotation(annotation, animated: true)
+        }
         let yOrigin = (searchBar.frame.size.height ) + UIApplication.shared.statusBarFrame.height
         findCitiesBy(keyword: "a", yOrigin: yOrigin)
         
@@ -170,12 +181,12 @@ extension HomeViewController:MKMapViewDelegate {
                 let wingSpeedLabel = UILabel(frame: CGRect(x: 0, y: Int(weatherlabel.frame.maxY + 16), width: width, height: 21))
                 let humanityLabel = UILabel(frame: CGRect(x: 0, y: Int(wingSpeedLabel.frame.maxY + 16), width: width, height: 21))
                 
-                cityNameLabel.text = "Bangalore"
+                cityNameLabel.text = self.weatherInfo?.name
                 cityNameLabel.textAlignment = .center
-                tempLabel.text = "temp"
-                weatherlabel.text = "weather"
-                wingSpeedLabel.text = "wing speed"
-                humanityLabel.text = "humanity"
+                tempLabel.text = "Tempeture: \(self.weatherInfo?.main?.temp ?? 0.0)"
+                weatherlabel.text = "Weather: \(self.weatherInfo?.weather?.last?.weatherDes ?? "")"
+                wingSpeedLabel.text = "Wing Speed: \(self.weatherInfo?.wind?.speed ?? 0.0)"
+                humanityLabel.text = "Humidity: \(self.weatherInfo?.main?.humidity ?? 0)"
                 
                 snapshotView.addSubview(cityNameLabel)
                 snapshotView.addSubview(tempLabel)
@@ -186,10 +197,7 @@ extension HomeViewController:MKMapViewDelegate {
                 
             }
         }
-        let regionRadius: CLLocationDistance = 1000
-        let coordinate = CLLocationCoordinate2D(latitude: self.weatherInfo?.coord.lat ?? 12.9716, longitude: self.weatherInfo?.coord.lon ?? 77.5946)
-        let coordinateRegion = MKCoordinateRegion(center: coordinate,latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
-        mapview.setRegion(coordinateRegion, animated: true)
+        
         annotationView.detailCalloutAccessoryView = snapshotView
     }
 }
