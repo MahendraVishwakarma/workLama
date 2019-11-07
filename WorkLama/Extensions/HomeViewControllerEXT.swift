@@ -30,6 +30,8 @@ extension HomeViewController{
         searchCon.searchBar.enablesReturnKeyAutomatically = true
         searchCon.obscuresBackgroundDuringPresentation = false
         searchCon.isActive = false
+        searchCon.searchBar.barStyle = .black
+        
         navigationItem.searchController = searchCon
         navigationItem.largeTitleDisplayMode = .never
         definesPresentationContext = true
@@ -127,7 +129,7 @@ extension HomeViewController:UISearchBarDelegate {
     func findCitiesBy(keyword:String, yOrigin:CGFloat) {
         let filteredCities:Cities = AppUtility.citiesList?.filter({$0.name.contains(keyword)}) ?? []
         listView.cities = filteredCities
-        let height = 47*filteredCities.count + 18
+        let height = 47*filteredCities.count + 16
         let calculatedHeight = height >= 390 ? 390 : height
         setListViewHeight(height: CGFloat(calculatedHeight), yOrigin: yOrigin)
         listView.reloadData()
@@ -182,11 +184,12 @@ extension HomeViewController:MKMapViewDelegate {
                 let humanityLabel = UILabel(frame: CGRect(x: 0, y: Int(wingSpeedLabel.frame.maxY + 16), width: width, height: 21))
                 
                 cityNameLabel.text = self.weatherInfo?.name
+                cityNameLabel.font = UIFont(name: "Helvetica Bold", size: 18)
                 cityNameLabel.textAlignment = .center
-                tempLabel.text = "Tempeture: \(self.weatherInfo?.main?.temp ?? 0.0)"
-                weatherlabel.text = "Weather: \(self.weatherInfo?.weather?.last?.weatherDes ?? "")"
-                wingSpeedLabel.text = "Wing Speed: \(self.weatherInfo?.wind?.speed ?? 0.0)"
-                humanityLabel.text = "Humidity: \(self.weatherInfo?.main?.humidity ?? 0)"
+                tempLabel.text = "🌡️ Tempeture: \(self.weatherInfo?.main?.temp ?? 0.0)"
+                weatherlabel.text = "🌨️ Weather: \(self.weatherInfo?.weather?.last?.weatherDes ?? "")"
+                wingSpeedLabel.text = "⚡ Wing Speed: \(self.weatherInfo?.wind?.speed ?? 0.0)"
+                humanityLabel.text = "🥵 Humidity: \(self.weatherInfo?.main?.humidity ?? 0)"
                 
                 snapshotView.addSubview(cityNameLabel)
                 snapshotView.addSubview(tempLabel)
