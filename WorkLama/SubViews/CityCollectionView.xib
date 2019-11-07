@@ -21,23 +21,25 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MG7-0K-k5L">
-                    <rect key="frame" x="8" y="40" width="359" height="619"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MG7-0K-k5L">
+                    <rect key="frame" x="8" y="28" width="359" height="631"/>
+                    <color key="backgroundColor" red="0.21176470589999999" green="0.58431372550000005" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="separatorColor" red="0.2274509804" green="0.62745098040000002" blue="0.88235294119999996" alpha="0.79328981160000001" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="Hrx-k9-57s"/>
-                        <outlet property="delegate" destination="-1" id="rsk-Qw-nie"/>
+                        <outlet property="dataSource" destination="-1" id="m26-lc-pg9"/>
+                        <outlet property="delegate" destination="-1" id="JkW-ry-iQQ"/>
                     </connections>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="MG7-0K-k5L" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="4V7-ei-SS2"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="MG7-0K-k5L" secondAttribute="bottom" constant="8" id="CzI-OU-vPA"/>
-                <constraint firstItem="MG7-0K-k5L" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="NWq-7x-ztl"/>
+                <constraint firstItem="MG7-0K-k5L" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="NWq-7x-ztl"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MG7-0K-k5L" secondAttribute="trailing" constant="8" id="vDQ-8O-q1u"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
         </view>
     </objects>
 </document>

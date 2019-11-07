@@ -23,8 +23,8 @@ class CityCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setdata() {
-        cityLabel.text = ""
-        country.text = ""
+    func setdata(city:City) {
+        cityLabel.text = city.name
+        country.text = city.country
     }
 }
