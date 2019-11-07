@@ -8,6 +8,7 @@
 
 import Foundation
 
+// protocol for passing data
 public protocol PassData:class {
     func passData(city:City)
 }
