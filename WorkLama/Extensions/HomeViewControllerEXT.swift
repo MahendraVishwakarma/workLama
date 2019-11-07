@@ -64,6 +64,7 @@ extension HomeViewController:PassData {
     }
     
     func fetchWeatherInfo(cityID:Int) {
+        loader.startAnimating()
         let url = String(format: AppUtility.weatherURL, cityID)
         WebServices.requestHttp(urlString: url, method: .Get, param: nil, decode: { (json) -> CityWeather? in
             guard let response = json as? CityWeather else{
@@ -73,6 +74,10 @@ extension HomeViewController:PassData {
             return response
             
         }) { (result) in
+            DispatchQueue.main.async {
+                self.loader.stopAnimating()
+            }
+            
             switch result {
             case .success(let cityData) :
                 self.weatherInfo = cityData

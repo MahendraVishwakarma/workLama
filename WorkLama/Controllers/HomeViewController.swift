@@ -11,6 +11,7 @@ import MapKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     let listView = CityCollectionView()
     var weatherInfo: CityWeather?
     var searchCon:UISearchController!

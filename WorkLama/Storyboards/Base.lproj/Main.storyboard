@@ -24,18 +24,29 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="SDB-dF-yn2"/>
                                 </connections>
                             </mapView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="BAr-wx-6zx">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="1WA-5N-0Du"/>
+                                    <constraint firstAttribute="width" constant="37" id="u1E-eA-9xi"/>
+                                </constraints>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.21176470589999999" green="0.58431372550000005" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gLU-xf-i5f" secondAttribute="bottom" id="5pt-RE-VLO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gLU-xf-i5f" secondAttribute="trailing" id="EaL-6u-9ho"/>
                             <constraint firstItem="gLU-xf-i5f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P6W-sT-OaB"/>
+                            <constraint firstItem="BAr-wx-6zx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vdb-8x-xT5"/>
                             <constraint firstItem="gLU-xf-i5f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fsY-4q-W3n"/>
+                            <constraint firstItem="BAr-wx-6zx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sGC-4p-jgJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="rWQ-oR-x0l"/>
                     <connections>
+                        <outlet property="loader" destination="BAr-wx-6zx" id="ZF5-Lc-glE"/>
                         <outlet property="mapview" destination="gLU-xf-i5f" id="hh9-ss-dmP"/>
                     </connections>
                 </viewController>
